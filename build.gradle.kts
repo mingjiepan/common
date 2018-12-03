@@ -18,6 +18,7 @@ dependencies {
     compile(group = "org.slf4j", name = "slf4j-api", version = "1.7.25")
     compile(group = "ch.qos.logback", name = "logback-core", version = "1.2.3")
     compile(group = "ch.qos.logback", name = "logback-classic", version = "1.2.3")
+    compile(group = "io.netty", name = "netty-all", version = "4.1.31.Final")
     testCompile("junit", "junit", "4.12")
 }
 

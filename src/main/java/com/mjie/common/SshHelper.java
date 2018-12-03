@@ -74,7 +74,7 @@ public class SshHelper {
      * @return sftp连接
      */
     public ChannelSftp sftpConnect() {
-        if (sshSession == null) {
+        if (sshSession == null || !sshSession.isConnected()) {
             this.sshConnect();
         }
         try {
@@ -95,7 +95,7 @@ public class SshHelper {
      * @return shell连接
      */
     public ChannelExec executeShell(String shell) {
-        if (sshSession == null) {
+        if (sshSession == null || !sshSession.isConnected()) {
             this.sshConnect();
         }
         try {
@@ -127,7 +127,7 @@ public class SshHelper {
      * @return 是否上传成功
      */
     public boolean upload(String uploadDir, String localDir, String fileName) {
-        if (this.channelSftp == null) {
+        if (this.channelSftp == null || !this.channelSftp.isConnected()) {
             this.sftpConnect();
         }
         try {
